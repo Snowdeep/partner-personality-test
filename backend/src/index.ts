@@ -1,5 +1,6 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
+import path from 'path';
 import { testRouter } from './routes/test.js';
 
 const app: Express = express();
@@ -22,6 +23,10 @@ app.use('/api/test', testRouter);
 app.get('/health', (req: Request, res: Response) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
+
+// 静态文件服务（前端 dist 目录）
+const distPath = path.resolve(process.cwd(), '..', 'frontend', 'dist');
+app.use(express.static(distPath));
 
 // 根路由
 app.get('/', (req: Request, res: Response) => {

@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+dist
+build
+.env.local
+.env.*.local
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode
+.idea
+frontend/dist
+frontend/node_modules
+backend/dist
+backend/node_modules
