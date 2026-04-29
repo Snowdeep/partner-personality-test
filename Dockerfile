@@ -27,27 +27,22 @@ RUN npm run build
 # ============ 生产阶段 ============
 FROM node:20-alpine
 
-WORKDIR /app
+WORKDIR /app/backend
 
 # 复制 package.json（仅生产阶段需要）
-COPY package*.json ./
-COPY backend/package*.json ./backend/
+COPY backend/package*.json ./
 
 # 仅安装生产依赖
 RUN npm install --omit=dev
-RUN cd backend && npm install --omit=dev
 
 # 从构建阶段复制编译后的文件
-COPY --from=builder /app/backend/dist ./backend/dist
-COPY --from=builder /app/frontend/dist ./frontend/dist
-COPY --from=builder /app/backend/node_modules ./backend/node_modules
+COPY --from=builder /app/backend/dist ./dist
+COPY --from=builder /app/frontend/dist ../frontend/dist
 
 # 数据文件
-COPY data/ ./data/
+COPY data/ ../data/
 
 EXPOSE 8080
-
-WORKDIR /app/backend
 
 # 启动后端服务
 CMD ["npm", "start"]
