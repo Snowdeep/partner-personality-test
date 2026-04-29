@@ -166,6 +166,7 @@ const nextQuestion = async () => {
   max-width: 500px;
   margin: 30px auto 20px;
   padding: 0 20px;
+  flex-shrink: 0;
 }
 
 .progress-bar {
@@ -201,7 +202,7 @@ const nextQuestion = async () => {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
+  width: 100%;
 }
 
 /* 题目部分 */
@@ -327,41 +328,47 @@ const nextQuestion = async () => {
   }
 
   .container {
-    margin: 10px auto;
-    padding: 20px 15px;
+    margin: 10px auto 20px;
+    padding: 20px 12px;
     border-radius: 12px;
   }
 
   .question-section {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   .emoji {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin-bottom: 12px;
   }
 
   .question-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .options-section {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   .option-button {
-    font-size: 0.9rem;
-    padding: 12px 14px;
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+  }
+
+  .option-button.unknown {
+    margin-top: 6px;
   }
 
   .navigation-section {
     flex-direction: column;
     gap: 10px;
+    margin-top: 10px;
   }
 
   .btn {
-    padding: 12px 16px;
-    font-size: 0.9rem;
+    padding: 11px 14px;
+    font-size: 0.85rem;
   }
 }
 </style>
