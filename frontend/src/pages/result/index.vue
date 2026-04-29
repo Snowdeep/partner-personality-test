@@ -154,6 +154,8 @@ const goHome = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .result-container {
@@ -167,6 +169,7 @@ const goHome = () => {
   max-height: 90vh;
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 /* 屏幕 1: 标签展示 */

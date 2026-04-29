@@ -155,6 +155,10 @@ const nextQuestion = async () => {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* 进度条 */
@@ -197,6 +201,7 @@ const nextQuestion = async () => {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 
 /* 题目部分 */
