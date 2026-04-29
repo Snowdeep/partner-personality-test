@@ -70,8 +70,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { getLabelById } from '../../utils/calculator';
-import type { FinalResult, PersonalityLabel } from '../../utils/calculator';
+import { getLabelByIdFromAPI } from '../../utils/calculator';
+import type { FinalResult, PersonalityLabel } from '../../utils/types';
 
 const router = useRouter();
 const route = useRoute();
@@ -80,16 +80,21 @@ const showDetails = ref(false);
 const result = ref<FinalResult | null>(null);
 const label = ref<PersonalityLabel | null>(null);
 
-onMounted(() => {
-  // 从路由状态中获取结果
-  const state = history.state;
-  if (state?.result) {
-    result.value = state.result;
-    label.value = getLabelById(result.value.labelId) || null;
-  }
+onMounted(async () => {
+  try {
+    // 从路由状态中获取结果
+    const state = history.state;
+    if (state?.result) {
+      result.value = state.result;
+      label.value = await getLabelByIdFromAPI(result.value.labelId);
+    }
 
-  // 如果没有结果，重定向回首页
-  if (!result.value) {
+    // 如果没有结果，重定向回首页
+    if (!result.value) {
+      router.push('/');
+    }
+  } catch (error) {
+    alert(`加载标签详情失败：${(error as Error).message}`);
     router.push('/');
   }
 });

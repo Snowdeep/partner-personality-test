@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { calculateResult, getQuestions, getLabelById } from '../controllers/testController.js';
-import labels from '../../data/labels.json' assert { type: 'json' };
+import labels from '../../../data/labels.json' assert { type: 'json' };
 
 export const testRouter = Router();
 

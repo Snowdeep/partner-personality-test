@@ -60,8 +60,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import type { Question } from '../../utils/calculator';
-import { getQuestions, calculateResult } from '../../utils/calculator';
+import type { Question } from '../../utils/types';
+import { getQuestionsFromAPI, submitAnswersToAPI } from '../../utils/calculator';
 
 const route = useRoute();
 const router = useRouter();
@@ -71,9 +71,18 @@ const questions = ref<Question[]>([]);
 const currentQuestionIndex = ref(0);
 const selectedOptionIndex = ref(-1);
 const answers = ref<Record<number, number>>({});
+const isLoading = ref(false);
 
-onMounted(() => {
-  questions.value = getQuestions(gender.value as 'male' | 'female');
+onMounted(async () => {
+  try {
+    isLoading.value = true;
+    questions.value = await getQuestionsFromAPI(gender.value as 'male' | 'female');
+  } catch (error) {
+    alert(`加载题库失败：${(error as Error).message}`);
+    router.push('/');
+  } finally {
+    isLoading.value = false;
+  }
 });
 
 const totalQuestions = computed(() => questions.value.length);
@@ -110,9 +119,10 @@ const nextQuestion = async () => {
     selectedOptionIndex.value =
       answers.value[currentQuestion.value.id] ?? -1;
   } else {
-    // 计算结果
+    // 提交答题结果
     try {
-      const result = calculateResult(answers.value, gender.value as 'male' | 'female');
+      isLoading.value = true;
+      const result = await submitAnswersToAPI(gender.value as 'male' | 'female', answers.value);
       // 跳转到结果页
       router.push({
         name: 'result',
@@ -123,6 +133,8 @@ const nextQuestion = async () => {
       });
     } catch (error) {
       alert(`计算结果出错：${(error as Error).message}`);
+    } finally {
+      isLoading.value = false;
     }
   }
 };

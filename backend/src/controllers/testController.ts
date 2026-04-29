@@ -1,6 +1,6 @@
-import questions from '../../data/questions.json' assert { type: 'json' };
-import mappings from '../../data/mappings.json' assert { type: 'json' };
-import labels from '../../data/labels.json' assert { type: 'json' };
+import questions from '../../../data/questions.json' assert { type: 'json' };
+import mappings from '../../../data/mappings.json' assert { type: 'json' };
+import labels from '../../../data/labels.json' assert { type: 'json' };
 
 export interface Question {
   id: number;
