@@ -45,7 +45,7 @@ COPY --from=builder /app/backend/node_modules ./backend/node_modules
 # 数据文件
 COPY data/ ./data/
 
-EXPOSE 7654
+EXPOSE 8080
 
 WORKDIR /app/backend
 
