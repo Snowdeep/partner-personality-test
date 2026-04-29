@@ -20,6 +20,7 @@ export interface ScoreResult {
 export interface PersonalityLabel {
   id: string;
   name: string;
+  emoji: string;
   combination: {
     attitude: string;
     traits: string;

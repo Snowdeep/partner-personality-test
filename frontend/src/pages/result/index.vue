@@ -49,18 +49,53 @@
             <p>{{ label?.caution }}</p>
           </section>
 
-          <!-- 操作按钮 -->
+              <!-- 操作按钮 -->
           <div class="action-buttons">
-            <button class="btn btn-share" @click="handleShare">
-              📤 分享这个结果
+            <button class="btn btn-share" @click="showShareOptions = true">
+              📤 分享结果
             </button>
-            <button class="btn btn-retry" @click="goHome">
+            <button class="btn btn-retry" @click="resetTest">
               🔄 重新测试
             </button>
             <button class="btn btn-home" @click="goHome">
               🏠 返回首页
             </button>
           </div>
+        </div>
+      </div>
+
+      <!-- 分享选项弹窗 -->
+      <div v-if="showShareOptions" class="share-modal">
+        <div class="share-modal-content">
+          <button class="close-btn" @click="showShareOptions = false">✕</button>
+          <h3>分享你的结果</h3>
+
+          <div class="share-options">
+            <button class="share-option" @click="downloadImage">
+              <span class="icon">🖼️</span>
+              <span class="label">下载图片</span>
+            </button>
+            <button class="share-option" @click="copyShareLink">
+              <span class="icon">🔗</span>
+              <span class="label">复制链接</span>
+            </button>
+            <button class="share-option" @click="shareViaWebShare" v-if="supportsWebShare">
+              <span class="icon">📱</span>
+              <span class="label">分享到...</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 隐藏的结果卡片（用于生成图片） -->
+      <div ref="cardElement" class="result-card-for-image">
+        <div class="card-header">
+          <div class="card-emoji">{{ label?.emoji || '🎯' }}</div>
+          <h2 class="card-title">{{ label?.name }}</h2>
+        </div>
+        <div class="card-content">
+          <p class="card-desc">{{ label?.combination.attitude }} · {{ label?.combination.traits }}</p>
+          <p class="card-footer">来自 伴侣人格测试 💕</p>
         </div>
       </div>
     </div>
@@ -72,13 +107,20 @@ import { ref, computed, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { getLabelByIdFromAPI } from '../../utils/calculator';
 import type { FinalResult, PersonalityLabel } from '../../utils/types';
+import html2canvas from 'html2canvas';
 
 const router = useRouter();
 const route = useRoute();
 
 const showDetails = ref(false);
+const showShareOptions = ref(false);
 const result = ref<FinalResult | null>(null);
 const label = ref<PersonalityLabel | null>(null);
+const cardElement = ref<HTMLElement | null>(null);
+
+const supportsWebShare = computed(() => {
+  return typeof navigator !== 'undefined' && !!navigator.share;
+});
 
 onMounted(async () => {
   try {
@@ -99,35 +141,55 @@ onMounted(async () => {
   }
 });
 
-const handleShare = () => {
-  // 生成分享文本
-  const shareText = `我的伴侣人格是"${label.value?.name}"！你的呢？点击链接测一下吧～`;
+const downloadImage = async () => {
+  try {
+    if (!cardElement.value) return;
 
-  // 微信小程序分享（如果在小程序环境中）
-  if (typeof wx !== 'undefined' && wx.shareAppMessage) {
-    wx.shareAppMessage({
-      title: shareText,
-      path: `/pages/result/index?resultId=${result.value?.userId}`,
-      imageUrl: 'https://example.com/share-image.jpg', // 需要替换为实际的分享图片URL
+    const canvas = await html2canvas(cardElement.value, {
+      backgroundColor: '#ffffff',
+      scale: 2,
     });
-  } else {
-    // Web 环境分享
-    const url = `${window.location.origin}?result=${result.value?.userId}`;
-    const text = `${shareText}\n${url}`;
 
-    if (navigator.share) {
-      navigator.share({
-        title: '伴侣人格测试',
-        text: shareText,
-        url: url,
-      });
-    } else {
-      // 降级方案：复制到剪贴板
-      navigator.clipboard.writeText(text).then(() => {
-        alert('已复制到剪贴板！');
-      });
-    }
+    // 将 canvas 转换为图片并下载
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = `伴侣人格-${label.value?.name}-${Date.now()}.png`;
+    link.click();
+
+    showShareOptions.value = false;
+    alert('图片已下载！');
+  } catch (error) {
+    alert(`生成图片失败：${(error as Error).message}`);
   }
+};
+
+const copyShareLink = () => {
+  const shareText = `我的伴侣人格是"${label.value?.name}"！你的呢？\n${window.location.origin}?result=${result.value?.userId}`;
+
+  navigator.clipboard.writeText(shareText).then(() => {
+    showShareOptions.value = false;
+    alert('已复制到剪贴板！');
+  }).catch(() => {
+    alert('复制失败，请重试');
+  });
+};
+
+const shareViaWebShare = () => {
+  if (!navigator.share) return;
+
+  navigator.share({
+    title: '伴侣人格测试',
+    text: `我的伴侣人格是"${label.value?.name}"！你的呢？`,
+    url: `${window.location.origin}?result=${result.value?.userId}`,
+  }).then(() => {
+    showShareOptions.value = false;
+  }).catch(() => {
+    // 用户取消分享，不需要显示错误
+  });
+};
+
+const resetTest = () => {
+  router.push('/');
 };
 
 const goHome = () => {
@@ -348,6 +410,134 @@ const goHome = () => {
 
 .btn-home:hover {
   background: #d0d0d0;
+}
+
+/* 结果卡片（用于生成图片） */
+.result-card-for-image {
+  position: fixed;
+  top: -9999px;
+  left: -9999px;
+  width: 500px;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+}
+
+.card-header {
+  margin-bottom: 30px;
+}
+
+.card-emoji {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.card-content {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card-desc {
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.card-footer {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* 分享选项模态框 */
+.share-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.share-modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 20px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-modal-content h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.share-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.share-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.share-option:hover {
+  border-color: #667eea;
+  background: #f5f5ff;
+  transform: translateX(5px);
+}
+
+.share-option .icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.share-option .label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
 }
 
 /* 响应式设计 */
