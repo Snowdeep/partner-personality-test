@@ -1,7 +1,16 @@
 import type { FinalResult, PersonalityLabel } from './types'
 
-// 从环境变量获取后端 URL，默认本地开发环境
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:7654'
+// 获取后端 API 基础 URL
+// 优先使用环境变量，其次使用当前 host (因为前后端在同一服务器)
+const getAPIBaseURL = (): string => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL
+  }
+  // 生产环境：前后端在同一个 host，直接使用当前域名
+  return typeof window !== 'undefined' ? window.location.origin : 'http://localhost:7654'
+}
+
+const API_BASE_URL = getAPIBaseURL()
 
 export interface Question {
   id: number;
