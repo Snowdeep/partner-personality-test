@@ -1,6 +1,6 @@
-import questions from '../data/questions.json' assert { type: 'json' };
-import mappings from '../data/mappings.json' assert { type: 'json' };
-import labels from '../data/labels.json' assert { type: 'json' };
+import questions from '../../data/questions.json' assert { type: 'json' };
+import mappings from '../../data/mappings.json' assert { type: 'json' };
+import labels from '../../data/labels.json' assert { type: 'json' };
 
 export interface Question {
   id: number;
@@ -115,8 +115,8 @@ export function calculateResult(
 
     // 根据选项的权重给各维度加分
     for (const [dimension, value] of Object.entries(selectedOption.weights)) {
-      if (dimension in scores && typeof value === 'string') {
-        scores[dimension as keyof ScoreResult][value] += 1;
+      if (typeof value === 'string' && value in scores[dimension as keyof ScoreResult]) {
+        (scores[dimension as keyof ScoreResult] as Record<string, number>)[value] += 1;
       }
     }
   }

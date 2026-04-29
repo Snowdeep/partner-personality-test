@@ -129,9 +129,6 @@ const goHome = () => {
   router.push('/');
 };
 
-const goRetry = () => {
-  router.push('/');
-};
 </script>
 
 <style scoped>
