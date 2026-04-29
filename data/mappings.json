@@ -1,0 +1,26 @@
+{
+  "labelMappings": {
+    "{\"attitude\":\"专一深情\",\"traits\":\"甜蜜可爱\",\"interaction\":\"粘人缠绵\",\"communication\":\"温言细语\"}": "1",
+    "{\"attitude\":\"专一深情\",\"traits\":\"甜蜜可爱\",\"interaction\":\"陪伴贴心\",\"communication\":\"温言细语\"}": "2",
+    "{\"attitude\":\"专一深情\",\"traits\":\"独立自信\",\"interaction\":\"陪伴贴心\",\"communication\":\"直言快语\"}": "3",
+    "{\"attitude\":\"专一深情\",\"traits\":\"独立自信\",\"interaction\":\"自在独立\",\"communication\":\"直言快语\"}": "4",
+    "{\"attitude\":\"温柔暖男/暖女\",\"traits\":\"甜蜜可爱\",\"interaction\":\"粘人缠绘\",\"communication\":\"温言细语\"}": "5",
+    "{\"attitude\":\"温柔暖男/暖女\",\"traits\":\"甜蜜可爱\",\"interaction\":\"陪伴贴心\",\"communication\":\"幽默逗趣\"}": "6",
+    "{\"attitude\":\"温柔暖男/暖女\",\"traits\":\"幽默风趣\",\"interaction\":\"陪伴贴心\",\"communication\":\"幽默逗趣\"}": "7",
+    "{\"attitude\":\"温柔暖男/暖女\",\"traits\":\"独立自信\",\"interaction\":\"自在独立\",\"communication\":\"温言细语\"}": "8",
+    "{\"attitude\":\"浪漫花心\",\"traits\":\"甜蜜可爱\",\"interaction\":\"粘人缠绘\",\"communication\":\"幽默逗趣\"}": "9",
+    "{\"attitude\":\"浪漫花心\",\"traits\":\"幽默风趣\",\"interaction\":\"陪伴贴心\",\"communication\":\"幽默逗趣\"}": "10",
+    "{\"attitude\":\"浪漫花心\",\"traits\":\"独立自信\",\"interaction\":\"自在独立\",\"communication\":\"直言快语\"}": "11",
+    "{\"attitude\":\"浪漫花心\",\"traits\":\"沉静深邃\",\"interaction\":\"有点冷淡\",\"communication\":\"沉默寡言\"}": "12",
+    "{\"attitude\":\"理性冷静\",\"traits\":\"独立自信\",\"interaction\":\"自在独立\",\"communication\":\"直言快语\"}": "13",
+    "{\"attitude\":\"理性冷静\",\"traits\":\"沉静深邃\",\"interaction\":\"自在独立\",\"communication\":\"沉默寡言\"}": "14",
+    "{\"attitude\":\"理性冷静\",\"traits\":\"幽默风趣\",\"interaction\":\"陪伴贴心\",\"communication\":\"幽默逗趣\"}": "15",
+    "{\"attitude\":\"理性冷静\",\"traits\":\"甜蜜可爱\",\"interaction\":\"陪伴贴心\",\"communication\":\"温言细语\"}": "16"
+  },
+  "dimensionOptions": {
+    "attitude": ["专一深情", "温柔暖男/暖女", "浪漫花心", "理性冷静"],
+    "traits": ["甜蜜可爱", "独立自信", "幽默风趣", "沉静深邃"],
+    "interaction": ["粘人缠绵", "陪伴贴心", "自在独立", "有点冷淡"],
+    "communication": ["温言细语", "直言快语", "幽默逗趣", "沉默寡言"]
+  }
+}

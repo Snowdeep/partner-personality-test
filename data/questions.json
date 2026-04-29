@@ -1,0 +1,1004 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "gender": "both",
+      "category": "attitude",
+      "question": "在感情中，他/她最看重什么？",
+      "emoji": "❤️",
+      "options": [
+        {
+          "text": "陪伴和忠诚，感情就是一生的承诺",
+          "weights": { "attitude": "专一深情" }
+        },
+        {
+          "text": "对方开心，能一直陪伴就最幸福",
+          "weights": { "attitude": "温柔暖男/暖女" }
+        },
+        {
+          "text": "热情和新鲜感，喜欢惊喜和冒险",
+          "weights": { "attitude": "浪漫花心" }
+        },
+        {
+          "text": "合适和稳定，感情需要理性基础",
+          "weights": { "attitude": "理性冷静" }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "gender": "both",
+      "category": "attitude",
+      "question": "如果你们吵架后他/她会怎么处理？",
+      "emoji": "💔",
+      "options": [
+        {
+          "text": "主动道歉，不想你生气，这段感情对他/她很重要",
+          "weights": { "attitude": "专一深情" }
+        },
+        {
+          "text": "会温柔地哄你，尽快化解误会",
+          "weights": { "attitude": "温柔暖男/暖女" }
+        },
+        {
+          "text": "可能会冷战一段时间，也许会找别的方式转移注意力",
+          "weights": { "attitude": "浪漫花心" }
+        },
+        {
+          "text": "冷静分析原因，提出解决方案",
+          "weights": { "attitude": "理性冷静" }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "gender": "both",
+      "category": "attitude",
+      "question": "他/她对待前任的态度如何？",
+      "emoji": "👤",
+      "options": [
+        {
+          "text": "一般不提及，前任就是过去，现在只有你最重要",
+          "weights": { "attitude": "专一深情" }
+        },
+        {
+          "text": "偶尔会感叹，但很快就平复，珍惜现在的你",
+          "weights": { "attitude": "温柔暖男/暖女" }
+        },
+        {
+          "text": "有时还会和前任保持联系，觉得可以做朋友",
+          "weights": { "attitude": "浪漫花心" }
+        },
+        {
+          "text": "很理性地评价，能客观分析那段关系的得失",
+          "weights": { "attitude": "理性冷静" }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "gender": "both",
+      "category": "attitude",
+      "question": "他/她对婚姻和长期关系的看法是？",
+      "emoji": "💍",
+      "options": [
+        {
+          "text": "非常向往，希望找到唯一的伴侣白头到老",
+          "weights": { "attitude": "专一深情" }
+        },
+        {
+          "text": "有好感，但更看重感情本身而不是形式",
+          "weights": { "attitude": "温柔暖男/暖女" }
+        },
+        {
+          "text": "可以考虑，但也不排除其他可能",
+          "weights": { "attitude": "浪漫花心" }
+        },
+        {
+          "text": "需要各方面条件都合适才会考虑，不是必须的",
+          "weights": { "attitude": "理性冷静" }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "gender": "both",
+      "category": "attitude",
+      "question": "他/她为了感情愿意做出什么程度的改变？",
+      "emoji": "🔄",
+      "options": [
+        {
+          "text": "很大的改变，为了你愿意调整自己的生活和原则",
+          "weights": { "attitude": "专一深情" }
+        },
+        {
+          "text": "会做出一些改变，但也会坚持自己的底线",
+          "weights": { "attitude": "温柔暖男/暖女" }
+        },
+        {
+          "text": "可能会承诺改变，但实际执行看心情",
+          "weights": { "attitude": "浪漫花心" }
+        },
+        {
+          "text": "不会为了谁改变自己，但愿意找到互相接纳的平衡点",
+          "weights": { "attitude": "理性冷静" }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "gender": "both",
+      "category": "traits",
+      "question": "他/她的整体气质和感觉是？",
+      "emoji": "✨",
+      "options": [
+        {
+          "text": "温柔可爱、有点讨喜的感觉",
+          "weights": { "traits": "甜蜜可爱" }
+        },
+        {
+          "text": "独立自信、有主见的感觉",
+          "weights": { "traits": "独立自信" }
+        },
+        {
+          "text": "活泼有趣、总能逗笑别人",
+          "weights": { "traits": "幽默风趣" }
+        },
+        {
+          "text": "沉静神秘、有魅力但难以靠近",
+          "weights": { "traits": "沉静深邃" }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "gender": "both",
+      "category": "traits",
+      "question": "在日常生活中，他/她最常做什么来让你开心？",
+      "emoji": "😊",
+      "options": [
+        {
+          "text": "撒娇卖萌或者说甜蜜的话",
+          "weights": { "traits": "甜蜜可爱" }
+        },
+        {
+          "text": "坚定地支持你的决定，鼓励你",
+          "weights": { "traits": "独立自信" }
+        },
+        {
+          "text": "讲笑话或做搞怪的事情逗你笑",
+          "weights": { "traits": "幽默风趣" }
+        },
+        {
+          "text": "陪你一起思考问题，进行深度交流",
+          "weights": { "traits": "沉静深邃" }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "gender": "both",
+      "category": "traits",
+      "question": "他/她遇到困难时的反应是？",
+      "emoji": "😰",
+      "options": [
+        {
+          "text": "容易被影响，会向你寻求安慰和帮助",
+          "weights": { "traits": "甜蜜可爱" }
+        },
+        {
+          "text": "沉着冷静，自己想办法解决",
+          "weights": { "traits": "独立自信" }
+        },
+        {
+          "text": "先调侃一下自己，然后想办法",
+          "weights": { "traits": "幽默风趣" }
+        },
+        {
+          "text": "深思熟虑，花时间想清楚再行动",
+          "weights": { "traits": "沉静深邃" }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "gender": "both",
+      "category": "traits",
+      "question": "他/她和朋友们在一起时的表现是？",
+      "emoji": "👥",
+      "options": [
+        {
+          "text": "有点害羞或依附，经常靠在你身边",
+          "weights": { "traits": "甜蜜可爱" }
+        },
+        {
+          "text": "很自然地和大家互动，不需要你的陪伴",
+          "weights": { "traits": "独立自信" }
+        },
+        {
+          "text": "是气氛制造者，经常逗得大家开心",
+          "weights": { "traits": "幽默风趣" }
+        },
+        {
+          "text": "相对安静，更多地倾听而不是主动讲话",
+          "weights": { "traits": "沉静深邃" }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "gender": "both",
+      "category": "traits",
+      "question": "你对他/她性格的一个词总结是？",
+      "emoji": "🎯",
+      "options": [
+        {
+          "text": "软、萌、甜",
+          "weights": { "traits": "甜蜜可爱" }
+        },
+        {
+          "text": "强、稳、可靠",
+          "weights": { "traits": "独立自信" }
+        },
+        {
+          "text": "趣、活、逗",
+          "weights": { "traits": "幽默风趣" }
+        },
+        {
+          "text": "深、静、酷",
+          "weights": { "traits": "沉静深邃" }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "gender": "both",
+      "category": "interaction",
+      "question": "他/她多久会主动找你一次？",
+      "emoji": "📱",
+      "options": [
+        {
+          "text": "几乎每天都要找你，有事没事都想聊",
+          "weights": { "interaction": "粘人缠绵" }
+        },
+        {
+          "text": "经常找你，但也会给彼此一些空间",
+          "weights": { "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "偶尔找，更多时候看他/她的心情或忙不忙",
+          "weights": { "interaction": "自在独立" }
+        },
+        {
+          "text": "很少主动找，大多时候需要你去找他/她",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "gender": "both",
+      "category": "interaction",
+      "question": "当你需要他/她陪伴时，他/她的反应是？",
+      "emoji": "🤝",
+      "options": [
+        {
+          "text": "立刻放下一切，只要你需要他/她就在",
+          "weights": { "interaction": "粘人缠绵" }
+        },
+        {
+          "text": "会尽量调整时间来陪你，但也会坚持自己的计划",
+          "weights": { "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "会陪你，但也会提醒你要独立",
+          "weights": { "interaction": "自在独立" }
+        },
+        {
+          "text": "有时候会以工作或其他事情为理由无法抽身",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "gender": "both",
+      "category": "interaction",
+      "question": "他/她对你和朋友聚会的态度是？",
+      "emoji": "🎉",
+      "options": [
+        {
+          "text": "希望你多陪他/她，有时会不开心你去聚会",
+          "weights": { "interaction": "粘人缠绵" }
+        },
+        {
+          "text": "支持你去聚会，也许会接你或者接待你的朋友",
+          "weights": { "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "很放心你去，有各自的生活圈子",
+          "weights": { "interaction": "自在独立" }
+        },
+        {
+          "text": "不太在乎，你去不去对他/她影响不大",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "gender": "both",
+      "category": "interaction",
+      "question": "他/她对你的关心方式是？",
+      "emoji": "💕",
+      "options": [
+        {
+          "text": "无微不至，会记住你的所有细节和喜好",
+          "weights": { "interaction": "粘人缠绵" }
+        },
+        {
+          "text": "体贴周到，会主动帮助但不过分",
+          "weights": { "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "会关心，但更多是给予建议让你独立处理",
+          "weights": { "interaction": "自在独立" }
+        },
+        {
+          "text": "关心相对有限，更多是你主动找他/她时才表现",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "gender": "both",
+      "category": "interaction",
+      "question": "在你们相处中，主要是谁在推动互动？",
+      "emoji": "🔄",
+      "options": [
+        {
+          "text": "大多时候是他/她在主动找你、安排你们的见面",
+          "weights": { "interaction": "粘人缠绵" }
+        },
+        {
+          "text": "相对平衡，你们都会主动约对方",
+          "weights": { "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "相对平衡，但也尊重彼此的独立时间",
+          "weights": { "interaction": "自在独立" }
+        },
+        {
+          "text": "大多时候是你在主动，他/她相对被动",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "gender": "both",
+      "category": "communication",
+      "question": "他/她在说话时的态度通常是？",
+      "emoji": "💬",
+      "options": [
+        {
+          "text": "温柔细心，说话时会很在意你的感受",
+          "weights": { "communication": "温言细语" }
+        },
+        {
+          "text": "直接坦白，有话就说，不绕弯子",
+          "weights": { "communication": "直言快语" }
+        },
+        {
+          "text": "爱开玩笑，经常用幽默来表达",
+          "weights": { "communication": "幽默逗趣" }
+        },
+        {
+          "text": "相对沉默，不爱说话，但说出来的话很有分量",
+          "weights": { "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "gender": "both",
+      "category": "communication",
+      "question": "当他/她不同意你的观点时，会怎样表达？",
+      "emoji": "🤔",
+      "options": [
+        {
+          "text": "很温柔地提出，怕伤害你的感受",
+          "weights": { "communication": "温言细语" }
+        },
+        {
+          "text": "直接说出自己的观点，甚至有点犀利",
+          "weights": { "communication": "直言快语" }
+        },
+        {
+          "text": "用开玩笑或讽刺的方式来表达异议",
+          "weights": { "communication": "幽默逗趣" }
+        },
+        {
+          "text": "可能就不说什么了，或者沉默地表示不同意",
+          "weights": { "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "gender": "both",
+      "category": "communication",
+      "question": "他/她和你讨论感情问题时的方式是？",
+      "emoji": "💭",
+      "options": [
+        {
+          "text": "很温柔和耐心，用词也很温暖",
+          "weights": { "communication": "温言细语" }
+        },
+        {
+          "text": "坦诚相对，直言不讳地表达感受",
+          "weights": { "communication": "直言快语" }
+        },
+        {
+          "text": "经常插入玩笑或轻松的语气，避免气氛太沉重",
+          "weights": { "communication": "幽默逗趣" }
+        },
+        {
+          "text": "可能比较沉默，需要你先开启话题",
+          "weights": { "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "gender": "both",
+      "category": "communication",
+      "question": "他/她说话时的语速和音量是？",
+      "emoji": "🔊",
+      "options": [
+        {
+          "text": "温和而缓慢，听起来很舒服",
+          "weights": { "communication": "温言细语" }
+        },
+        {
+          "text": "快速而清晰，有时甚至很大声",
+          "weights": { "communication": "直言快语" }
+        },
+        {
+          "text": "波澜起伏，时而快时而慢，充满表现力",
+          "weights": { "communication": "幽默逗趣" }
+        },
+        {
+          "text": "相对平缓甚至有点轻，需要靠近才能听清",
+          "weights": { "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "gender": "both",
+      "category": "communication",
+      "question": "他/她听你倾诉时的反应通常是？",
+      "emoji": "👂",
+      "options": [
+        {
+          "text": "温柔地倾听和安慰，给你很多同情",
+          "weights": { "communication": "温言细语" }
+        },
+        {
+          "text": "给出直接的建议或者观点分析",
+          "weights": { "communication": "直言快语" }
+        },
+        {
+          "text": "用幽默来缓解你的压力，逗你开心",
+          "weights": { "communication": "幽默逗趣" }
+        },
+        {
+          "text": "静静地听，可能会思考后给出深层次的建议",
+          "weights": { "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "gender": "male",
+      "category": "traits",
+      "question": "他在你们单独相处时和在朋友面前的表现差异大吗？",
+      "emoji": "🎭",
+      "options": [
+        {
+          "text": "差异很大，他在你面前特别温柔甚至有点腼腆",
+          "weights": { "traits": "甜蜜可爱", "communication": "温言细语" }
+        },
+        {
+          "text": "基本一样，他是啥性格就是啥样",
+          "weights": { "traits": "独立自信", "communication": "直言快语" }
+        },
+        {
+          "text": "他在朋友面前会更搞怪，和你单独时放松一点",
+          "weights": { "traits": "幽默风趣", "communication": "幽默逗趣" }
+        },
+        {
+          "text": "在朋友面前比较冷淡，单独和你相处时才会开放",
+          "weights": { "traits": "沉静深邃", "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "gender": "male",
+      "category": "traits",
+      "question": "他对你化妆、打扮的看法是？",
+      "emoji": "💄",
+      "options": [
+        {
+          "text": "非常在意，会夸你、建议你怎么穿更好看",
+          "weights": { "attitude": "温柔暖男/暖女", "communication": "温言细语" }
+        },
+        {
+          "text": "坦白说出自己的想法，有时候直接说不好看",
+          "weights": { "communication": "直言快语" }
+        },
+        {
+          "text": "无论你怎么装扮都说你最好看，经常开玩笑",
+          "weights": { "attitude": "浪漫花心", "communication": "幽默逗趣" }
+        },
+        {
+          "text": "相对不在乎外表，更关心你的想法和感受",
+          "weights": { "attitude": "理性冷静", "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "gender": "male",
+      "category": "interaction",
+      "question": "当你提出你的需求时，他的反应是？",
+      "emoji": "🙋",
+      "options": [
+        {
+          "text": "立刻同意，甚至主动帮你想办法",
+          "weights": { "interaction": "粘人缠绵", "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "听听你的想法，然后给出他的建议",
+          "weights": { "traits": "独立自信", "attitude": "理性冷静" }
+        },
+        {
+          "text": "可能会先开个玩笑，然后帮助你",
+          "weights": { "traits": "幽默风趣", "communication": "幽默逗趣" }
+        },
+        {
+          "text": "有时候会显得不太热情或者反应缓慢",
+          "weights": { "interaction": "有点冷淡", "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "gender": "male",
+      "category": "interaction",
+      "question": "他对你朋友圈和社交圈的态度是？",
+      "emoji": "👫",
+      "options": [
+        {
+          "text": "很在意，甚至有点嫉妒你花时间给别人",
+          "weights": { "interaction": "粘人缠绵" }
+        },
+        {
+          "text": "支持你和朋友聚会，也愿意认识你的朋友",
+          "weights": { "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "不太在乎，各自有各自的生活圈子",
+          "weights": { "interaction": "自在独立" }
+        },
+        {
+          "text": "相对漠不关心，你的社交和他关系不大",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "gender": "male",
+      "category": "interaction",
+      "question": "他有时会不理你或者冷淡对待你吗？",
+      "emoji": "😶",
+      "options": [
+        {
+          "text": "从来不会，他总是很热情",
+          "weights": { "interaction": "粘人缠绵", "attitude": "温柔暖男/暖女" }
+        },
+        {
+          "text": "很少会，除非发生了严重的分歧",
+          "weights": { "interaction": "陪伴贴心", "attitude": "专一深情" }
+        },
+        {
+          "text": "偶尔会，但很快就会恢复",
+          "weights": { "interaction": "自在独立", "attitude": "浪漫花心" }
+        },
+        {
+          "text": "经常会，他有时候会给你冷战或冷淡的感觉",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "gender": "male",
+      "category": "attitude",
+      "question": "他对未来（比如一起旅游、一起买房、结婚等）的规划怎样？",
+      "emoji": "🌍",
+      "options": [
+        {
+          "text": "经常和你讨论，描绘你们的未来",
+          "weights": { "attitude": "专一深情", "interaction": "粘人缠绵" }
+        },
+        {
+          "text": "有过讨论，但相对务实，会根据现实调整",
+          "weights": { "attitude": "理性冷静", "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "不太爱计划，更多活在当下",
+          "weights": { "attitude": "浪漫花心", "interaction": "自在独立" }
+        },
+        {
+          "text": "很少谈论或者显得不太感兴趣",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "gender": "male",
+      "category": "communication",
+      "question": "他对你的缺点或者不足的态度是？",
+      "emoji": "🎯",
+      "options": [
+        {
+          "text": "温柔地指出，但不会让你难受",
+          "weights": { "communication": "温言细语", "attitude": "温柔暖男/暖女" }
+        },
+        {
+          "text": "直接指出，有时候会有点伤人",
+          "weights": { "communication": "直言快语" }
+        },
+        {
+          "text": "用开玩笑的方式提醒你",
+          "weights": { "communication": "幽默逗趣", "traits": "幽默风趣" }
+        },
+        {
+          "text": "很少评价，更多是接纳",
+          "weights": { "communication": "沉默寡言", "attitude": "理性冷静" }
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "gender": "male",
+      "category": "traits",
+      "question": "他会为了一些小事突然对你发火吗？",
+      "emoji": "😠",
+      "options": [
+        {
+          "text": "从来不会，他脾气很好",
+          "weights": { "attitude": "温柔暖男/暖女", "communication": "温言细语" }
+        },
+        {
+          "text": "偶尔会，但会很快道歉",
+          "weights": { "communication": "直言快语", "attitude": "专一深情" }
+        },
+        {
+          "text": "会，但他能很快调节自己",
+          "weights": { "traits": "幽默风趣", "interaction": "自在独立" }
+        },
+        {
+          "text": "会，而且可能会冷淡你一段时间",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "gender": "male",
+      "category": "attitude",
+      "question": "他在表达爱意时更倾向于？",
+      "emoji": "💖",
+      "options": [
+        {
+          "text": "甜言蜜语和身体亲近",
+          "weights": { "interaction": "粘人缠绵", "attitude": "浪漫花心" }
+        },
+        {
+          "text": "用行动来证明，比如帮助你、陪伴你",
+          "weights": { "interaction": "陪伴贴心", "attitude": "温柔暖男/暖女" }
+        },
+        {
+          "text": "用玩笑和搞怪的方式来表达",
+          "weights": { "communication": "幽默逗趣", "traits": "幽默风趣" }
+        },
+        {
+          "text": "少言寡语，更多通过陪伴和理解来表达",
+          "weights": { "communication": "沉默寡言", "attitude": "理性冷静" }
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "gender": "male",
+      "category": "traits",
+      "question": "如果用一句话总结和他相处的感受是？",
+      "emoji": "💭",
+      "options": [
+        {
+          "text": "他让我感觉被很需要，有种被宠的感觉",
+          "weights": { "interaction": "粘人缠绵", "attitude": "温柔暖男/暖女" }
+        },
+        {
+          "text": "他是可靠的，我可以依赖他",
+          "weights": { "interaction": "陪伴贴心", "attitude": "专一深情" }
+        },
+        {
+          "text": "和他在一起很开心，没有太大压力",
+          "weights": { "communication": "幽默逗趣", "interaction": "自在独立" }
+        },
+        {
+          "text": "他有点神秘，有时候让我看不懂他",
+          "weights": { "traits": "沉静深邃", "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "gender": "female",
+      "category": "traits",
+      "question": "她在你们单独相处时和在朋友面前的表现差异大吗？",
+      "emoji": "🎭",
+      "options": [
+        {
+          "text": "差异很大，她在你面前特别温柔甚至有点娇气",
+          "weights": { "traits": "甜蜜可爱", "communication": "温言细语" }
+        },
+        {
+          "text": "基本一样，她是啥性格就是啥样",
+          "weights": { "traits": "独立自信", "communication": "直言快语" }
+        },
+        {
+          "text": "她在朋友面前会更活泼搞怪，和你单独时放松一点",
+          "weights": { "traits": "幽默风趣", "communication": "幽默逗趣" }
+        },
+        {
+          "text": "在朋友面前比较冷淡，单独和你相处时才会开放",
+          "weights": { "traits": "沉静深邃", "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "gender": "female",
+      "category": "traits",
+      "question": "她对自己的外表和打扮有多在意？",
+      "emoji": "💄",
+      "options": [
+        {
+          "text": "非常在意，经常问你意见，希望你夸她",
+          "weights": { "traits": "甜蜜可爱", "attitude": "温柔暖女" }
+        },
+        {
+          "text": "有一定在意，但相对独立，不太需要你的评价",
+          "weights": { "traits": "独立自信", "attitude": "理性冷静" }
+        },
+        {
+          "text": "有点在意，但经常开玩笑说自己不够好看",
+          "weights": { "traits": "幽默风趣", "communication": "幽默逗趣" }
+        },
+        {
+          "text": "相对不在乎，更关注内在修养",
+          "weights": { "traits": "沉静深邃", "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "gender": "female",
+      "category": "interaction",
+      "question": "当你提出你的需求时，她的反应是？",
+      "emoji": "🙋",
+      "options": [
+        {
+          "text": "立刻说好，很开心能帮助你",
+          "weights": { "interaction": "粘人缠绵", "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "听听你的想法，然后一起想办法",
+          "weights": { "traits": "独立自信", "attitude": "理性冷静" }
+        },
+        {
+          "text": "可能会先开个玩笑，然后帮助你",
+          "weights": { "traits": "幽默风趣", "communication": "幽默逗趣" }
+        },
+        {
+          "text": "有时候会显得不太热情或者反应缓慢",
+          "weights": { "interaction": "有点冷淡", "communication": "沉默寡言" }
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "gender": "female",
+      "category": "interaction",
+      "question": "她对你朋友圈和社交圈的态度是？",
+      "emoji": "👫",
+      "options": [
+        {
+          "text": "很在意，甚至有点嫉妒你花时间给别人",
+          "weights": { "interaction": "粘人缠绵" }
+        },
+        {
+          "text": "支持你和朋友聚会，也愿意认识你的朋友",
+          "weights": { "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "不太在乎，各自有各自的生活圈子",
+          "weights": { "interaction": "自在独立" }
+        },
+        {
+          "text": "相对漠不关心，你的社交和她关系不大",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "gender": "female",
+      "category": "interaction",
+      "question": "她有时会不理你或者冷淡对待你吗？",
+      "emoji": "😶",
+      "options": [
+        {
+          "text": "从来不会，她总是很热情",
+          "weights": { "interaction": "粘人缠绵", "attitude": "温柔暖女" }
+        },
+        {
+          "text": "很少会，除非发生了严重的分歧",
+          "weights": { "interaction": "陪伴贴心", "attitude": "专一深情" }
+        },
+        {
+          "text": "偶尔会，但很快就会恢复",
+          "weights": { "interaction": "自在独立", "attitude": "浪漫花心" }
+        },
+        {
+          "text": "经常会，她有时候会给你冷战或冷淡的感觉",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "gender": "female",
+      "category": "attitude",
+      "question": "她对未来（比如一起旅游、一起买房、结婚等）的规划怎样？",
+      "emoji": "🌍",
+      "options": [
+        {
+          "text": "经常和你讨论，描绘你们的未来",
+          "weights": { "attitude": "专一深情", "interaction": "粘人缠绵" }
+        },
+        {
+          "text": "有过讨论，但相对务实，会根据现实调整",
+          "weights": { "attitude": "理性冷静", "interaction": "陪伴贴心" }
+        },
+        {
+          "text": "不太爱计划，更多活在当下",
+          "weights": { "attitude": "浪漫花心", "interaction": "自在独立" }
+        },
+        {
+          "text": "很少谈论或者显得不太感兴趣",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "gender": "female",
+      "category": "communication",
+      "question": "她对你的缺点或者不足的态度是？",
+      "emoji": "🎯",
+      "options": [
+        {
+          "text": "温柔地指出，但不会让你难受",
+          "weights": { "communication": "温言细语", "attitude": "温柔暖女" }
+        },
+        {
+          "text": "直接指出，有时候会有点伤人",
+          "weights": { "communication": "直言快语" }
+        },
+        {
+          "text": "用开玩笑的方式提醒你",
+          "weights": { "communication": "幽默逗趣", "traits": "幽默风趣" }
+        },
+        {
+          "text": "很少评价，更多是接纳",
+          "weights": { "communication": "沉默寡言", "attitude": "理性冷静" }
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "gender": "female",
+      "category": "traits",
+      "question": "她会为了一些小事突然对你发火吗？",
+      "emoji": "😠",
+      "options": [
+        {
+          "text": "从来不会，她脾气很好",
+          "weights": { "attitude": "温柔暖女", "communication": "温言细语" }
+        },
+        {
+          "text": "偶尔会，但会很快道歉",
+          "weights": { "communication": "直言快语", "attitude": "专一深情" }
+        },
+        {
+          "text": "会，但她能很快调节自己",
+          "weights": { "traits": "幽默风趣", "interaction": "自在独立" }
+        },
+        {
+          "text": "会，而且可能会冷淡你一段时间",
+          "weights": { "interaction": "有点冷淡" }
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "gender": "female",
+      "category": "attitude",
+      "question": "她在表达爱意时更倾向于？",
+      "emoji": "💖",
+      "options": [
+        {
+          "text": "甜言蜜语和身体亲近",
+          "weights": { "interaction": "粘人缠绵", "attitude": "浪漫花心" }
+        },
+        {
+          "text": "用行动来证明，比如帮助你、陪伴你",
+          "weights": { "interaction": "陪伴贴心", "attitude": "温柔暖女" }
+        },
+        {
+          "text": "用玩笑和搞怪的方式来表达",
+          "weights": { "communication": "幽默逗趣", "traits": "幽默风趣" }
+        },
+        {
+          "text": "少言寡语，更多通过陪伴和理解来表达",
+          "weights": { "communication": "沉默寡言", "attitude": "理性冷静" }
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "gender": "female",
+      "category": "traits",
+      "question": "如果用一句话总结和她相处的感受是？",
+      "emoji": "💭",
+      "options": [
+        {
+          "text": "她让我感觉被很需要，有种被宠的感觉",
+          "weights": { "interaction": "粘人缠绵", "attitude": "温柔暖女" }
+        },
+        {
+          "text": "她是可靠的，我可以依赖她",
+          "weights": { "interaction": "陪伴贴心", "attitude": "专一深情" }
+        },
+        {
+          "text": "和她在一起很开心，没有太大压力",
+          "weights": { "communication": "幽默逗趣", "interaction": "自在独立" }
+        },
+        {
+          "text": "她有点神秘，有时候让我看不懂她",
+          "weights": { "traits": "沉静深邃", "interaction": "有点冷淡" }
+        }
+      ]
+    }
+  ]
+}
