@@ -164,6 +164,9 @@ const goHome = () => {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   min-height: auto;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 屏幕 1: 标签展示 */
@@ -251,8 +254,8 @@ const goHome = () => {
 /* 屏幕 2: 详细解读 */
 .result-screen-2 {
   padding: 30px;
-  max-height: none;
   overflow-y: auto;
+  flex: 1;
 }
 
 .btn-back {
@@ -351,8 +354,12 @@ const goHome = () => {
     min-height: 100vh;
   }
 
+  .result-container {
+    max-height: 95vh;
+  }
+
   .result-screen-1 {
-    padding: 40px 20px 30px;
+    padding: 30px 20px 25px;
     min-height: auto;
   }
 
@@ -364,31 +371,47 @@ const goHome = () => {
     font-size: 3rem;
   }
 
+  .label-desc {
+    font-size: 0.95rem;
+  }
+
+  .btn-detail {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+
   .result-screen-2 {
     padding: 20px;
-    max-height: none;
   }
 
   .detail-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .section {
+    margin-bottom: 18px;
   }
 
   .section h3 {
     font-size: 1rem;
+    margin-bottom: 8px;
   }
 
   .section p {
     font-size: 0.9rem;
+    line-height: 1.6;
   }
 
-  .btn-detail {
-    padding: 12px 30px;
-    font-size: 0.9rem;
+  .action-buttons {
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 15px;
   }
 
   .btn {
-    padding: 12px 16px;
-    font-size: 0.9rem;
+    padding: 11px 14px;
+    font-size: 0.85rem;
   }
 }
 </style>
