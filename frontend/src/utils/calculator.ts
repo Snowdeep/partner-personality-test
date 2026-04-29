@@ -1,5 +1,8 @@
 import type { FinalResult, PersonalityLabel } from './types'
 
+// 从环境变量获取后端 URL，默认本地开发环境
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:7654'
+
 export interface Question {
   id: number;
   gender: 'both' | 'male' | 'female';
@@ -24,7 +27,7 @@ export interface ScoreResult {
  */
 export async function getQuestionsFromAPI(gender: 'male' | 'female'): Promise<Question[]> {
   try {
-    const response = await fetch(`http://localhost:7654/api/test/questions/${gender}`);
+    const response = await fetch(`${API_BASE_URL}/api/test/questions/${gender}`);
     if (!response.ok) {
       throw new Error('Failed to fetch questions');
     }
@@ -44,7 +47,7 @@ export async function submitAnswersToAPI(
   answers: Record<number, number>
 ): Promise<FinalResult> {
   try {
-    const response = await fetch('http://localhost:7654/api/test/submit', {
+    const response = await fetch(`${API_BASE_URL}/api/test/submit`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -69,7 +72,7 @@ export async function submitAnswersToAPI(
  */
 export async function getLabelsFromAPI(): Promise<PersonalityLabel[]> {
   try {
-    const response = await fetch('http://localhost:7654/api/test/labels');
+    const response = await fetch(`${API_BASE_URL}/api/test/labels`);
     if (!response.ok) {
       throw new Error('Failed to fetch labels');
     }
@@ -86,7 +89,7 @@ export async function getLabelsFromAPI(): Promise<PersonalityLabel[]> {
  */
 export async function getLabelByIdFromAPI(labelId: string): Promise<PersonalityLabel> {
   try {
-    const response = await fetch(`http://localhost:7654/api/test/label/${labelId}`);
+    const response = await fetch(`${API_BASE_URL}/api/test/label/${labelId}`);
     if (!response.ok) {
       throw new Error('Failed to fetch label');
     }
