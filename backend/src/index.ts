@@ -4,15 +4,15 @@ import path from 'path';
 import { testRouter } from './routes/test.js';
 
 const app: Express = express();
-const PORT = process.env.PORT || 7654;
+const PORT: number = parseInt(process.env.PORT || '7654', 10);
 
 // 中间件
 app.use(cors());
 app.use(express.json());
 
 // 日志中间件
-app.use((req: Request, res: Response, next: NextFunction) => {
-  console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+app.use((_req: Request, _res: Response, next: NextFunction): void => {
+  console.log(`[${new Date().toISOString()}] ${_req.method} ${_req.path}`);
   next();
 });
 
@@ -20,7 +20,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use('/api/test', testRouter);
 
 // 健康检查
-app.get('/health', (req: Request, res: Response) => {
+app.get('/health', (_req: Request, res: Response): void => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
@@ -29,7 +29,7 @@ const distPath = path.resolve(process.cwd(), '..', 'frontend', 'dist');
 app.use(express.static(distPath));
 
 // 根路由
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_req: Request, res: Response): void => {
   res.json({
     name: 'Partner Personality Test API',
     version: '1.0.0',
@@ -42,7 +42,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 // 错误处理中间件
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+app.use((err: Error, _req: Request, res: Response): void => {
   console.error('Error:', err);
   res.status(500).json({
     error: err.message || 'Internal Server Error',
@@ -50,10 +50,10 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 // 404 处理
-app.use((req: Request, res: Response) => {
+app.use((_req: Request, res: Response): void => {
   res.status(404).json({
     error: 'Not Found',
-    path: req.path,
+    path: _req.path,
   });
 });
 

@@ -154,6 +154,10 @@ function findMaxOption(optionsScores: Record<string, number>): string {
     }
   }
 
+  if (maxOption === '') {
+    throw new Error('No valid option found');
+  }
+
   return maxOption;
 }
 
@@ -182,7 +186,7 @@ function findLabelByCombination(result: {
 /**
  * 根据 ID 获取标签详情
  */
-export function getLabelById(labelId: string) {
+export function getLabelById(labelId: string): any {
   return labels.labels.find((l: any) => l.id === labelId);
 }
 
@@ -190,12 +194,12 @@ export function getLabelById(labelId: string) {
  * 生成用户 ID
  */
 function generateUserId(): string {
-  return `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  return `user_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
 }
 
 /**
  * 获取所有维度的选项
  */
-export function getDimensionOptions() {
+export function getDimensionOptions(): any {
   return mappings.dimensionOptions;
 }
