@@ -163,7 +163,7 @@ const goHome = () => {
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  min-height: 80vh;
+  min-height: auto;
 }
 
 /* 屏幕 1: 标签展示 */
@@ -173,7 +173,7 @@ const goHome = () => {
   align-items: center;
   justify-content: center;
   padding: 60px 30px 40px;
-  min-height: 80vh;
+  min-height: auto;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   text-align: center;
@@ -251,7 +251,7 @@ const goHome = () => {
 /* 屏幕 2: 详细解读 */
 .result-screen-2 {
   padding: 30px;
-  max-height: 80vh;
+  max-height: none;
   overflow-y: auto;
 }
 
@@ -346,6 +346,11 @@ const goHome = () => {
 
 /* 响应式设计 */
 @media (max-width: 600px) {
+  .result-page {
+    padding: 10px;
+    min-height: 100vh;
+  }
+
   .result-screen-1 {
     padding: 40px 20px 30px;
     min-height: auto;
@@ -361,6 +366,7 @@ const goHome = () => {
 
   .result-screen-2 {
     padding: 20px;
+    max-height: none;
   }
 
   .detail-content h2 {
@@ -372,6 +378,16 @@ const goHome = () => {
   }
 
   .section p {
+    font-size: 0.9rem;
+  }
+
+  .btn-detail {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 12px 16px;
     font-size: 0.9rem;
   }
 }
