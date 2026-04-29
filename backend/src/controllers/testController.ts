@@ -1,13 +1,25 @@
 import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { join } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// 获取数据文件路径，支持开发和生产环境
+const getDataPath = (filename: string): string => {
+  // 生产环境：/app/data/
+  // 开发环境：项目根目录/data/
+  const prodPath = join('/app', 'data', filename);
+  const devPath = join(process.cwd(), '../../data', filename);
 
-const questions = JSON.parse(readFileSync(join(__dirname, '../../../data/questions.json'), 'utf-8'));
-const mappings = JSON.parse(readFileSync(join(__dirname, '../../../data/mappings.json'), 'utf-8'));
-const labels = JSON.parse(readFileSync(join(__dirname, '../../../data/labels.json'), 'utf-8'));
+  try {
+    // 优先尝试生产路径
+    readFileSync(prodPath, 'utf-8');
+    return prodPath;
+  } catch {
+    return devPath;
+  }
+};
+
+const questions = JSON.parse(readFileSync(getDataPath('questions.json'), 'utf-8'));
+const mappings = JSON.parse(readFileSync(getDataPath('mappings.json'), 'utf-8'));
+const labels = JSON.parse(readFileSync(getDataPath('labels.json'), 'utf-8'));
 
 export interface Question {
   id: number;

@@ -39,8 +39,8 @@ RUN npm install --omit=dev
 COPY --from=builder /app/backend/dist ./dist
 COPY --from=builder /app/frontend/dist ../frontend/dist
 
-# 数据文件
-COPY data/ ../data/
+# 复制数据文件到根目录
+COPY data/ /app/data/
 
 EXPOSE 8080
 
