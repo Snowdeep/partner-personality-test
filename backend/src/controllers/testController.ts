@@ -1,6 +1,13 @@
-import questions from '../../../data/questions.json' assert { type: 'json' };
-import mappings from '../../../data/mappings.json' assert { type: 'json' };
-import labels from '../../../data/labels.json' assert { type: 'json' };
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const questions = JSON.parse(readFileSync(join(__dirname, '../../../data/questions.json'), 'utf-8'));
+const mappings = JSON.parse(readFileSync(join(__dirname, '../../../data/mappings.json'), 'utf-8'));
+const labels = JSON.parse(readFileSync(join(__dirname, '../../../data/labels.json'), 'utf-8'));
 
 export interface Question {
   id: number;

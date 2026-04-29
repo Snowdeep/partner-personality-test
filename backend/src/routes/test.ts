@@ -1,6 +1,12 @@
 import { Router, Request, Response } from 'express';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import { calculateResult, getQuestions } from '../controllers/testController.js';
-import labels from '../../../data/labels.json' assert { type: 'json' };
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const labels = JSON.parse(readFileSync(join(__dirname, '../../../data/labels.json'), 'utf-8'));
 
 export const testRouter = Router();
 
