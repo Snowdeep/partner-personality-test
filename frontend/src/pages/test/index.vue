@@ -195,6 +195,8 @@ const nextQuestion = async () => {
   border-radius: 16px;
   padding: 40px 30px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
 }
 
 /* 题目部分 */
@@ -310,21 +312,51 @@ const nextQuestion = async () => {
 
 /* 响应式设计 */
 @media (max-width: 600px) {
+  .test-page {
+    padding: 10px;
+  }
+
+  .progress-section {
+    margin: 15px auto 10px;
+    padding: 0 10px;
+  }
+
   .container {
-    padding: 30px 20px;
+    margin: 10px auto;
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .question-section {
+    margin-bottom: 25px;
+  }
+
+  .emoji {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
   }
 
   .question-text {
     font-size: 1.1rem;
   }
 
+  .options-section {
+    margin-bottom: 25px;
+  }
+
   .option-button {
     font-size: 0.9rem;
-    padding: 14px 16px;
+    padding: 12px 14px;
   }
 
   .navigation-section {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 12px 16px;
+    font-size: 0.9rem;
   }
 }
 </style>
